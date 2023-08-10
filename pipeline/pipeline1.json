@@ -1,0 +1,500 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "iso_code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "iso_code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "location",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "location",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_cases",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_cases",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_cases",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_cases",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_deaths",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_deaths",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_deaths",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_deaths",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_cases_per_million",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_cases_per_million",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_cases_per_million",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_cases_per_million",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_deaths_per_million",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_deaths_per_million",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_deaths_per_million",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_deaths_per_million",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_tests",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_tests",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_tests",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_tests",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_tests_per_thousand",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_tests_per_thousand",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_tests_per_thousand",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_tests_per_thousand",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_tests_smoothed",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_tests_smoothed",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_tests_smoothed_per_thousand",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "new_tests_smoothed_per_thousand",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "tests_units",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "tests_units",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stringency_index",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "stringency_index",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "population",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "population",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "population_density",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "population_density",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "median_age",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "median_age",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "aged_65_older",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "aged_65_older",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "aged_70_older",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "aged_70_older",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gdp_per_capita",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "gdp_per_capita",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "extreme_poverty",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "extreme_poverty",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cvd_death_rate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cvd_death_rate",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "diabetes_prevalence",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "diabetes_prevalence",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "female_smokers",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "female_smokers",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "male_smokers",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "male_smokers",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "handwashing_facilities",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "handwashing_facilities",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "hospital_beds_per_100k",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "hospital_beds_per_100k",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "InputBlogStorageData",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "OutputBlogStorageData",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy data2",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "InputBlogStorageData",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureDataLakeStorage1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
