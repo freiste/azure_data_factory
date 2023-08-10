@@ -1,0 +1,9 @@
+{
+	"name": "freisteDemoDataFactory1",
+	"location": "switzerlandnorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4b5ce4c8-7964-4360-91bd-ffd9896f2dff",
+		"tenantId": "c1d53983-0712-4f7e-8b5c-19b42013f5c2"
+	}
+}
